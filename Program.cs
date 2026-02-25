@@ -13,7 +13,16 @@ namespace _260224_аисд_дз
         {
             Console.WriteLine("#1");
 
-            //не разобралась как создать заданное количество массивов (через цикл фор же нельзя дать разные названия)
+            Console.WriteLine("Сколько массивов хотите: ");
+            int k = IsInt();
+            int[][] arrnum1 = new int[k][];
+
+            for(int i = 0; i < k; i++)
+            {
+                //метод, создающий массив
+                int cnt = 0; //длина созданного массива
+                arrnum1[i][cnt] = 0; //передпем созданный массив
+            }
 
             //------------------------
             Console.WriteLine("#2");
@@ -34,6 +43,17 @@ namespace _260224_аисд_дз
             }
             Console.WriteLine($"Ответ: {s}");
 
+        }
+        static int IsInt()
+        {
+            while(true)
+            {
+                string n = Console.ReadLine().Trim();
+                if(int.TryParse(n, out int newn))
+                {
+                    return newn;
+                }
+            }
         }
         static string[] IsIntArr()
         {
